@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Wissam labiod</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-image: url("6193217.jpg");
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav {
+        background-color: #3d5467;
+        color: #f1edee;
+        padding: 15px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      nav a {
+        color: #f1edee;
+        text-decoration: none;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+      }
+      nav a:hover {
+        color: #8aa29e;
+      }
+      nav a.active {
+        font-weight: bold; /* Par exemple, mettre en gras */
+        padding-bottom: 5px;
+        border-bottom: 3px solid #db5461; /* Soulignement */
+      }
+      .container {
+        max-width: 1000px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: none; /* Ajouté pour cacher tous les contenus sauf le premier */
+        background-color: #fff; /* Ajouté pour définir la couleur de fond sur blanc */
+      }
+      #accueil {
+        background-color: transparent; /* Ajouté pour définir la couleur de fond sur transparent */
+      }
+      .section {
+        margin-top: 50px;
+        margin-bottom: 30px;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #333;
+      }
+      p {
+        color: #000;
+      }
+      .about-me {
+        text-align: justify;
+      }
+      .contact-info {
+        list-style-type: none;
+        padding: 0;
+      }
+      .contact-info li {
+        margin-bottom: 10px;
+      }
+      .division {
+        display: flex; /* Utilise flexbox pour placer les éléments côte à côte */
+        align-items: center; /* Centre les éléments verticalement */
+        margin-bottom: 20px;
+      }
+
+      .text {
+        margin-right: 100px; /* Ajoute une marge à droite du texte */
+      }
+
+      .circle {
+        width: 300px; /* Ajuster la largeur du cercle */
+        height: 300px; /* Ajuster la hauteur du cercle */
+        border-radius: 50%; /* Crée un cercle */
+        overflow: hidden; /* Cache tout ce qui dépasse du cercle */
+      }
+
+      .circle img {
+        width: 100%; /* Ajuster la largeur de l'image */
+        height: 100%; /* Ajuster la hauteur de l'image */
+      }
+      .contact-button {
+        background-color: #db5461; /* Couleur de fond du bouton */
+        color: #f1edee; /* Couleur du texte du bouton */
+        border: none; /* Supprime la bordure du bouton */
+        border-radius: 10px; /* Arrondit les coins du bouton */
+        padding: 10px 20px; /* Ajoute un rembourrage au bouton */
+        font-size: 20px; /* Taille de la police du bouton */
+        cursor: pointer; /* Change le curseur en pointeur lorsqu'il est survolé */
+        transition: background-color 0.3s ease; /* Ajoute une transition à la couleur de fond du bouton */
+      }
+
+      .contact-button:hover {
+        background-color: #3d5467; /* Couleur de fond du bouton lorsqu'il est survolé */
+      }
+      .social-icons {
+        display: flex; /* Affiche les icônes côte à côte */
+        justify-content: left; /* Centre les icônes horizontalement */
+        margin-top: 100px; /* Ajoute une marge en haut des icônes */
+      }
+
+      .social-icons a {
+        color: white; /* Couleur des icônes */
+        font-size: 28px; /* Taille des icônes */
+        margin: 0 10px; /* Ajoute une marge entre les icônes */
+        transition: color 0.3s ease; /* Ajoute une transition à la couleur des icônes */
+      }
+
+      .social-icons a:hover {
+        color: #db5461; /* Couleur des icônes lorsqu'elles sont survolées */
+      }
+      .name {
+        color: #db5461; /* Changez la couleur en fonction de vos préférences */
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#accueil" class="active" onclick="afficherSection('accueil')"
+        >Accueil</a
+      >
+      <a href="#cv" onclick="afficherSection('cv')">CV</a>
+      <a href="#projets" onclick="afficherSection('projets')">Projets</a>
+      <a href="#apropos" onclick="afficherSection('apropos')"
+        >À propos de moi</a
+      >
+      <a href="#contact" onclick="afficherSection('contact')">Contact</a>
+    </nav>
+
+    <div id="accueil" class="container section" style="display: block">
+      <div class="division">
+        <div class="text">
+          <i style="font-weight: bold; color: #fff; font-size: 5ch">
+            Hi,<br />
+            I'm <span class="name">Mohammed el amin, Brik</span><br />
+            Full stack developer
+          </i>
+        </div>
+        <div class="circle">
+          <img
+            src="20221117.jpg"
+            alt="Description de l'image"
+          />
+        </div>
+      </div>
+      <button class="contact-button" onclick="afficherSection('contact')">
+        Contact
+      </button>
+      <div class="social-icons">
+        <a
+          href="https://www.linkedin.com/in/mohammed-el-amin-brik-547531295/"
+          target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="https://github.com/brim0049" target="_blank"
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
+    </div>
+
+    <div id="cv" class="container section">
+      <h1>CV</h1>
+      <div class="education">
+        <h2>Formation</h2>
+        <ul>
+          <li>
+            Baccalauréat en Informatique - Université du Québec à Rimouski
+            (Automne 2019 - Mai 2024)
+          </li>
+          <li>
+            Baccalauréat en Génie Logiciel - Université Laval (Hiver 2019 -
+            Automne 2019)
+          </li>
+          <li>
+            Baccalauréat en Mathématique - Algérie - 2017 (Avec mention très
+            bien)
+          </li>
+        </ul>
+      </div>
+      <div class="experience">
+        <h2>Expérience Professionnelle</h2>
+        <div class="job">
+          <h3>Auxiliaire d’Enseignement - Hiver 2021 - UQAR Compus Lévis</h3>
+          <ul>
+            <li>
+              Créer des diapositives de présentation, des notes de cours et du matériel de lecture supplémentaire pour aider les étudiants à comprendre les concepts clés.
+            </li>
+            <li>
+              Évaluer les travaux de programmation des étudiants, fournir des
+              commentaires constructifs et aider à déboguer leur code.
+            </li>
+            <li>Créer des quiz avec ReactJS pour les cours en ligne.</li>
+            <li>
+              Rédiger et corriger des examens pour les cours en présentiel et en ligne.            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="skills">
+        <h2>Compétences</h2>
+        <div class="programming-languages">
+          <h4>Langages de Programmation</h4>
+            <p>
+              C# : Utilisé pour le développement d’applications avec WPF,
+              ASP.NET, WinForms et comme langage de programmation général.
+            </p>
+            <p>
+              Python : Utilisé pour le développement web avec Django et pour
+              divers scripts d’automatisation.
+            </p>
+        </div>
+        <div class="web-technologies">
+          <h4>Technologies Web</h4>
+          <p>
+            Front-end : HTML, CSS, JavaScript, Bootstrap, ReactJS, React Native.
+          </p>
+          <p>Back-end : Node.js, Django, ASP.NET.</p>
+          <p>Développement Mobile : React Native.</p>
+          <p>
+            APIs : Conception et utilisation d’API RESTful avec Swagger et
+            Django.
+          </p>
+          <p>CMS : Création et gestion de sites web avec WordPress.</p>
+        </div>
+        <div class="databases">
+          <h4>Bases de Données</h4>
+          <p>
+            SQL : Expérience avec MySQL et SQL Server pour la conception et la
+            gestion de bases de données relationnelles.
+          </p>
+          <p>
+            NoSQL : Expérience avec MongoDB pour le stockage et la manipulation
+            de données non structurées.
+          </p>
+          <p>Firebase : Utilisation de Firebase pour le stockage de données et l'authentification dans les applications web et mobiles.</p>
+
+        </div>
+        <div class="tools-environments">
+          <h4>Outils et Environnements</h4>
+          <p>Systèmes d’exploitation : Linux, Windows.</p>
+          <p>IDEs : Visual Studio, Visual Studio Code et Xcode.</p>
+          <p>
+            Outils divers : Git pour le contrôle de version, Postman pour le
+            test d’API, MySQL Workbench pour la gestion de bases de données,
+            VMware pour la virtualisation, TCP/IP pour le réseau.
+          </p>
+        </div>
+        <div class="methodologies-design">
+          <h4>Méthodologies et Conception</h4>
+          <p>
+            Conception : Expérience avec UML et BPMN pour la modélisation de
+            processus et de systèmes.
+          </p>
+          <p>
+            Méthodologies : Expérience avec les méthodes agiles (SCRUM) pour la
+            gestion de projets.
+          </p>
+        </div>
+        <div class="other-skills">
+          <h4>Autres Compétences</h4>
+          <p>
+            Web Scraping : Expérience avec node.js pour extraire des données à
+            partir de sites web.
+          </p>
+          <p>
+            Design : Expérience avec Figma pour le design d’interface
+            utilisateur, connaissance de base de Photoshop.
+          </p>
+          <p>
+            Office 365 : Expérience avec la suite Office pour la productivité et
+            la collaboration.
+          </p>
+        </div>
+      </div>
+      <div class="interests">
+        <h2>Loisirs</h2>
+        <p>
+          Passionné de jeux vidéo et lecteur assidu d'actualités mondiales et
+          informatiques pour rester constamment informé.
+        </p>
+      </div>
+      <div class="languages">
+        <h2>Linguistiques</h2>
+        <p>Français, Anglais (fonctionnel), Arabe</p>
+      </div>
+    </div>
+
+    <div id="projets" class="container section">
+      <h2>Projets</h2>
+      <div class="project">
+        <h3>Projet d'étude en Informatique II – Hiver 2024 - UQAR</h3>
+        <ul>
+          <li>Conception et développement d'une application mobile cross-platform avec React Native.</li>
+          <li>Intégration de Firebase pour l'authentification sécurisée, la gestion des données en temps réel (Firestore, Cloud Storage) et les notifications.</li>
+          <li>Mise en place de l'automatisation des formulaires via l'injection de scripts dans les WebViews.</li>
+          <li>Implémentation de la reconnaissance optique de documents d'identité avec Google Cloud Vision API.</li>
+          <li>Conception d'une interface utilisateur intuitive avec Figma, offrant une expérience fluide.</li>
+          <li>Tests approfondis et optimisations pour assurer la compatibilité multi-appareils.</li>
+        </ul>
+      </div>
+    
+      <div class="project">
+        <h3>Projet d'étude en Informatique I – Hiver 2023 - UQAR</h3>
+        <ul>
+          <li>Conception et développement d'une API REST pour un système de gestion de données en utilisant C#.</li>
+          <li>Modélisation de la structure de la base de données pour assurer une intégration fluide de l'API.</li>
+          <li>Conception et développement de l'application en utilisant les technologies telles que C#, WPF et MySQL.</li>
+          <li>Création d'interfaces utilisateur pour permettre aux utilisateurs de visualiser, ajouter, modifier et supprimer des données dans la base de données.</li>
+          <li>Intégration de fonctionnalités de visualisation de données pour représenter les données sous forme de réseau.</li>
+          <li>Rédaction d'une documentation complète pour le logiciel, y compris un manuel d’utilisateur et une documentation technique.</li>
+        </ul>
+      </div>     
+
+    </div>
+
+    <div id="apropos" class="container section">
+      <h2>À propos de moi</h2>
+      <p>
+        Je suis un développeur Full Stack passionné par les technologies du web, mobile et du logiciel. Diplômé en Informatique de l'Université du Québec à Rimouski, j'ai également suivi des cours en Génie Logiciel à l'Université Laval et en Mathématiques en Algérie.
+      </p>
+      <p>
+        Fort de mon parcours académique, j'ai acquis une solide base de connaissances en programmation, en conception de logiciels et en gestion de bases de données. J'ai développé des compétences approfondies dans le développement web avec des frameworks tels que Django, ReactJS et ASP.NET, ainsi que dans le développement mobile avec React Native.
+      </p>
+      <p>
+        Passionné par les nouvelles technologies, je suis constamment à l'affût des dernières tendances et des innovations dans le domaine de l'informatique. Mon objectif est de mettre mes compétences au service de projets innovants, seul ou en équipe, afin de contribuer à leur succès et de continuer à enrichir mes connaissances.
+      </p>
+    </div>
+    
+    
+
+    <div id="contact" class="container section">
+      <h2>Contact</h2>
+      <ul class="contact-info">
+        <li>Nom complet : Brik, Mohammed el amin</li>
+        <li>Email : brim0049@uqar.ca</li>
+        <li>Téléphone : +1(581)703-2171</li>
+        <li>Adresse : 170, av de la cathedrale, Rimouski, G5L 5H9, Québec, Canada </li>
+      </ul>
+    </div>
+
+    <script>
+      function afficherSection(id) {
+        // Cacher tous les éléments avec la classe "container"
+        var containers = document.querySelectorAll(".container");
+        containers.forEach(function (container) {
+          container.style.display = "none";
+        });
+
+        // Afficher l'élément correspondant à l'ID donné
+        var element = document.getElementById(id);
+        if (element) {
+          element.style.display = "block";
+
+          // Supprimer la classe "active" de tous les liens de navigation
+          var links = document.querySelectorAll("nav a");
+          links.forEach(function (link) {
+            link.classList.remove("active");
+          });
+
+          // Ajouter la classe "active" au lien correspondant
+          var link = document.querySelector('nav a[href="#' + id + '"]');
+          if (link) {
+            link.classList.add("active");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
